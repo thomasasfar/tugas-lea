@@ -16,8 +16,9 @@
     </div>
     <div class="card-content">
         <div class="card-body">
-            <form class="form form-horizontal" action="" method="post">
+            <form class="form form-horizontal" action="{{ route('data-masuk.update', $data_masuk->id) }}" method="post">
                 @csrf
+                @method('PUT')
                 <div class="form-body">
                     <div class="row">
                         <div class="col-md-4">

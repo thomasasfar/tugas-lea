@@ -2,11 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
-use App\Helper\Constant;
-use Illuminate\Http\Request;
 use App\Models\DataUangMasuk;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 
 class BendaharaMasukController extends Controller
 {
@@ -41,7 +38,7 @@ class BendaharaMasukController extends Controller
     {
         DataUangMasuk::create([
             'bulan' => $request->bulan,
-            'jumlah' => $request->jumlah
+            'jumlah' => $request->jumlah,
         ]);
         return redirect(route("data-masuk.index"));
     }
@@ -63,7 +60,7 @@ class BendaharaMasukController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit( Request $request, DataUangMasuk $data_masuk)
+    public function edit(Request $request, DataUangMasuk $data_masuk)
     {
         $lists = [
             "Januari",
@@ -89,9 +86,13 @@ class BendaharaMasukController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, DataUangMasuk $data_masuk)
     {
-        //
+        $data_masuk->update([
+            'jumlah' => $request->jumlah,
+            'bulan' => $request->bulan,
+        ]);
+        return redirect('/bendahara/data-masuk');
     }
 
     /**
