@@ -58,7 +58,7 @@
                                 <span>Dashboard</span>
                             </a>
                         </li>
-                        <li class="sidebar-item  {{ (request()->is('bendahara/data-uang-masuk', 'bendahara/data-uang-masuk/create')) ? 'active' : '' }}">
+                        <li class="sidebar-item  {{ (request()->is('bendahara/data-masuk', 'bendahara/data-masuk/create')) ? 'active' : '' }}">
                             <a href="{{ route('data-masuk.index') }}" class="sidebar-link">
                                 <span>Data Uang Masuk</span>
                             </a>

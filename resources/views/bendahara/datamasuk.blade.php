@@ -42,7 +42,7 @@
                                 <a href="{{ route('data-masuk.edit', ['data_masuk' => $item->id]) }}" class="me-2">
                                     <span class="btn btn-sm btn-success">Edit</span>
                                 </a>
-                                <form action="" method="post">
+                                <form action="{{ route('data-masuk.destroy', ['data_masuk' => $item->id]) }}" method="post">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger btn-sm">Delete</button>
