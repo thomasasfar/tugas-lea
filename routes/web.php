@@ -7,5 +7,7 @@ use App\Http\Controllers\BendaharaMasukController;
 // Bendahara =================================================================
 Route::group(['prefix' => 'bendahara'], function(){
     Route::resource('/dashboard', DashboardController::class);
-    Route::resource('/data-masuk', BendaharaMasukController::class);
+    Route::resource('/data-masuk', BendaharaMasukController::class)->parameters([
+        'data_masuk' => 'data_masuk'
+    ]);
 });

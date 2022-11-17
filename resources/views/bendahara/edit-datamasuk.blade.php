@@ -24,26 +24,21 @@
                             <label>Jumlah</label>
                         </div>
                         <div class="col-md-8 form-group">
-                            <input value="{{ $dataUangMasuk->bulan }}" type="string" id="email-id" class="form-control" name="jumlah">
+                            <input value="{{ $data_masuk->jumlah }}" type="string" id="email-id" class="form-control" name="jumlah">
                         </div>
                         <div class="col-md-4">
                             <label>Bulan Donasi</label>
                         </div>
                         <div class="col-md-8 form-group">
                             <fieldset class="form-group">
-                                <select class="form-select" value="{{ $dataUangMasuk->bulan }}" id="basicSelect" name="bulan">
-                                    <option value="Januari">Januari</option>
-                                    <option value="Februari">Februari</option>
-                                    <option value="Maret">Maret</option>
-                                    <option value="April">April</option>
-                                    <option value="May">May</option>
-                                    <option value="Juni">Juni</option>
-                                    <option value="Juli">Juli</option>
-                                    <option value="Agustus">Agustus</option>
-                                    <option value="September">September</option>
-                                    <option value="Oktober">Oktober</option>
-                                    <option value="November">November</option>
-                                    <option value="Desember">Desember</option>
+                                <select class="form-select" value="{{ $data_masuk->bulan }}" id="basicSelect" name="bulan">
+                                    @foreach ($lists as $list)
+                                        <option value="{{ $list }}"
+                                            @if ($list == $data_masuk->bulan)
+                                                selected
+                                            @endif
+                                        >{{ $list }}</option>
+                                    @endforeach
                                 </select>
                             </fieldset>
                         </div>

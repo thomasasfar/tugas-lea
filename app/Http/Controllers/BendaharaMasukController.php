@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Helper\Constant;
 use Illuminate\Http\Request;
 use App\Models\DataUangMasuk;
 use Illuminate\Support\Facades\DB;
@@ -62,10 +63,23 @@ class BendaharaMasukController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(DataUangMasuk $dataUangMasuk)
+    public function edit( Request $request, DataUangMasuk $data_masuk)
     {
-        dd($dataUangMasuk);
-        return view('bendahara.edit-datamasuk', compact('dataUangMasuk'));
+        $lists = [
+            "Januari",
+            "Februari",
+            "Maret",
+            "April",
+            "May",
+            "Juni",
+            "Juli",
+            "Agustus",
+            "September",
+            "Oktober",
+            "November",
+            "Desember",
+        ];
+        return view('bendahara.edit-datamasuk', compact('data_masuk', 'lists'));
     }
 
     /**
