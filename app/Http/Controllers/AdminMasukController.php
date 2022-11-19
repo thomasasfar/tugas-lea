@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\DataUangMasuk;
 use Illuminate\Http\Request;
 
-class BendaharaMasukController extends Controller
+class AdminMasukController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class BendaharaMasukController extends Controller
     public function index()
     {
         $data = DataUangMasuk::all();
-        return view('bendahara.datamasuk', compact('data'));
+        return view('admin.datamasuk', compact('data'));
     }
 
     /**
@@ -25,7 +25,7 @@ class BendaharaMasukController extends Controller
      */
     public function create()
     {
-        return view('bendahara.create-datamasuk');
+        return view('admin.create-datamasuk');
     }
 
     /**
@@ -76,7 +76,7 @@ class BendaharaMasukController extends Controller
             "November",
             "Desember",
         ];
-        return view('bendahara.edit-datamasuk', compact('data_masuk', 'lists'));
+        return view('admin.edit-datamasuk', compact('data_masuk', 'lists'));
     }
 
     /**
@@ -92,7 +92,7 @@ class BendaharaMasukController extends Controller
             'jumlah' => $request->jumlah,
             'bulan' => $request->bulan,
         ]);
-        return redirect('/bendahara/data-masuk');
+        return redirect(route("data-masuk.index"));
     }
 
     /**
@@ -104,6 +104,6 @@ class BendaharaMasukController extends Controller
     public function destroy(DataUangMasuk $data_masuk)
     {
         $data_masuk->delete();
-        return redirect('/bendahara/data-masuk');
+        return redirect(route("data-masuk.index"));
     }
 }

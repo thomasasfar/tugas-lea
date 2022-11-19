@@ -53,17 +53,17 @@
                     <ul class="menu">
                         <li class="sidebar-title">Menu</li>
 
-                        <li class="sidebar-item  {{ (request()->is('bendahara/dashboard')) ? 'active' : '' }}">
+                        <li class="sidebar-item  {{ (request()->is('admin/dashboard')) ? 'active' : '' }}">
                             <a href="{{ route('dashboard.index') }}" class="sidebar-link">
                                 <span>Dashboard</span>
                             </a>
                         </li>
-                        <li class="sidebar-item  {{ (request()->is('bendahara/data-masuk', 'bendahara/data-masuk/create')) ? 'active' : '' }}">
+                        <li class="sidebar-item  {{ (request()->is('admin/data-masuk', 'admin/data-masuk/create')) ? 'active' : '' }}">
                             <a href="{{ route('data-masuk.index') }}" class="sidebar-link">
                                 <span>Data Uang Masuk</span>
                             </a>
                         </li>
-                        <li class="sidebar-item  {{ (request()->is('bendahara/data-uang-keluar')) ? 'active' : '' }}">
+                        <li class="sidebar-item  {{ (request()->is('admin/data-uang-keluar')) ? 'active' : '' }}">
                             <a href="#" class="sidebar-link">
                                 <span>Data Uang Keluar</span>
                             </a>
@@ -88,7 +88,7 @@
                                     <div class="user-menu d-flex ">
                                         <div class="user-name text-end me-3">
                                             <h6 class="mb-0 text-gray-600">Andre</h6>
-                                            <p class="mb-0 text-sm text-gray-600">Bendahara</p>
+                                            <p class="mb-0 text-sm text-gray-600">Admin</p>
                                         </div>
                                         <div class="user-img d-flex align-items-center">
                                             <div class="avatar avatar-md">
