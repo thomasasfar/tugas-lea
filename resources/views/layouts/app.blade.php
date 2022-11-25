@@ -68,6 +68,11 @@
                                 <span>Data Uang Keluar</span>
                             </a>
                         </li>
+                        <li class="sidebar-item  {{ (request()->is('admin/data-uang-keluar')) ? 'active' : '' }}">
+                            <a href="#" class="sidebar-link">
+                                <span>Data Kegiatan</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>

@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\DataUangMasuk;
+
+use App\Models\Kegiatan;
 use Illuminate\Http\Request;
 
-class AdminMasukController extends Controller
+class KegiatanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +14,8 @@ class AdminMasukController extends Controller
      */
     public function index()
     {
-        $data = DataUangMasuk::all();
-        return view('admin.datamasuk', compact('data'));
+        $kegiatan = Kegiatan::all();
+        return view('admin.kegiatan', compact('kegiatan'));
     }
 
     /**
@@ -24,7 +25,7 @@ class AdminMasukController extends Controller
      */
     public function create()
     {
-        return view('admin.create-datamasuk');
+        //
     }
 
     /**
@@ -35,11 +36,7 @@ class AdminMasukController extends Controller
      */
     public function store(Request $request)
     {
-        DataUangMasuk::create([
-            'bulan' => $request->bulan,
-            'jumlah' => $request->jumlah,
-        ]);
-        return redirect(route("data-masuk.index"));
+        //
     }
 
     /**
@@ -59,23 +56,9 @@ class AdminMasukController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request, DataUangMasuk $data_masuk)
+    public function edit($id)
     {
-        $lists = [
-            "Januari",
-            "Februari",
-            "Maret",
-            "April",
-            "May",
-            "Juni",
-            "Juli",
-            "Agustus",
-            "September",
-            "Oktober",
-            "November",
-            "Desember",
-        ];
-        return view('admin.edit-datamasuk', compact('data_masuk', 'lists'));
+        //
     }
 
     /**
@@ -85,13 +68,9 @@ class AdminMasukController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, DataUangMasuk $data_masuk)
+    public function update(Request $request, $id)
     {
-        $data_masuk->update([
-            'jumlah' => $request->jumlah,
-            'bulan' => $request->bulan,
-        ]);
-        return redirect(route("data-masuk.index"));
+        //
     }
 
     /**
@@ -100,9 +79,8 @@ class AdminMasukController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(DataUangMasuk $data_masuk)
+    public function destroy($id)
     {
-        $data_masuk->delete();
-        return redirect(route("data-masuk.index"));
+        //
     }
 }
